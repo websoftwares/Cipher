@@ -1,0 +1,16 @@
+{
+    "name": "websoftwares/cipher",
+    "description": "Encrypts/decrypts text with RIJNDAEL 256 Cipher",
+    "keywords": ["encryption","security"],
+    "authors": [
+        {
+            "name": "Boris Verhaaff",
+            "email": "boris@websoftwar.es"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Websoftwares": "src/"
+        }
+    }
+}
