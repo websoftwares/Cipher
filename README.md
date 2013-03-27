@@ -2,7 +2,7 @@
 
 Encrypts/decrypts text with RIJNDAEL 256 Cipher.
 
-## Usuage
+## Usage
 
 ```
     $securekey = '4s05Gim69k6Cn7E4Wl03cEI5v9K49l95';
