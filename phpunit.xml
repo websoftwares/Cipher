@@ -7,7 +7,7 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         syntaxCheck="true" 
+         syntaxCheck="true"
          bootstrap="./phpunit.php">
     <testsuites>
         <testsuite name="tests">

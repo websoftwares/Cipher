@@ -22,19 +22,19 @@ class CipherTest extends \PHPUnit_Framework_TestCase
     public function testHasAttributeSucceeds()
     {
         $this->assertObjectHasAttribute('securekey', $this->cipher);
-        $this->assertObjectHasAttribute('iv', $this->cipher); 
+        $this->assertObjectHasAttribute('iv', $this->cipher);
     }
 
     public function testPropertyValuesSucceeds()
     {
         $cipher = new ReflectionClass($this->cipher);
 
-        foreach($cipher->getProperties() as $property) {
+        foreach ($cipher->getProperties() as $property) {
 
             $property->setAccessible(true);
             $propertyName = $property->name;
             $this->assertEquals($this->$propertyName, $property->getValue($this->cipher));
-        }        
+        }
     }
 
     public function testEncryptDecryptSucceeds()
