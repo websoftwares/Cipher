@@ -13,7 +13,7 @@ Encrypts/decrypts text with RIJNDAEL 256 Cipher.
     $cipher = new Cipher($securekey, $iv);
 
     $encrypted = $cipher->encrypt('MySuperSecretText');
-    $decrypted = $chipher->decrypt($encrypted);
+    $decrypted = $cipher->decrypt($encrypted);
 
     echo $decrypted;
 ```
