@@ -5,7 +5,7 @@ namespace Websoftwares;
  * Encrypts/decrypts text with RIJNDAEL 256 Cipher
  *
  * @package Websoftwares
- *
+ * @license http://philsturgeon.co.uk/code/dbad-license DbaD
  * @author Boris <boris@websoftwar.es>
  */
 class Cipher

@@ -1,6 +1,7 @@
 {
     "name": "websoftwares/cipher",
     "description": "Encrypts/decrypts text with RIJNDAEL 256 Cipher",
+    "license": "DBAD",
     "keywords": ["encryption","security"],
     "authors": [
         {
@@ -12,5 +13,8 @@
         "psr-0": {
             "Websoftwares": "src/"
         }
+    },
+    "require": {
+        "php": ">=5.3.0"
     }
 }
