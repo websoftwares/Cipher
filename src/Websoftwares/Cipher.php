@@ -47,7 +47,7 @@ class Cipher
             throw new \InvalidArgumentException('input is a required argument');
         }
 
-        return base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $this->securekey, $input, MCRYPT_MODE_ECB, $this->iv));
+        return $this->base64safeEncode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $this->securekey, $input, MCRYPT_MODE_ECB, $this->iv));
     }
 
     /**
@@ -61,6 +61,24 @@ class Cipher
             throw new \InvalidArgumentException('input is a required argument');
         }
 
-        return trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $this->securekey, base64_decode($input), MCRYPT_MODE_ECB, $this->iv));
+        return trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $this->securekey, $this->base64safeDecode($input), MCRYPT_MODE_ECB, $this->iv));
+    }
+
+    private function base64safeEncode($input = null)
+    {
+        if (! $input) {
+            throw new \InvalidArgumentException('input is a required argument');
+        }
+
+        return rtrim(strtr(base64_encode($input), '+/', '-_'), '=');
+    }
+
+    private function base64safeDecode($input = null)
+    {
+        if (! $input) {
+            throw new \InvalidArgumentException('input is a required argument');
+        }
+
+        return base64_decode(str_pad(strtr($input, '-_', '+/'), strlen($input) % 4, '=', STR_PAD_RIGHT));
     }
 }
