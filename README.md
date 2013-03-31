@@ -2,11 +2,13 @@
 
 Encrypts/decrypts text with RIJNDAEL 256 Cipher.
 
+[![Build Status](https://api.travis-ci.org/websoftwares/Cipher.png)](https://travis-ci.org/websoftwares/Cipher)
+
 ## Usage
 
 ```
     $securekey = '4s05Gim69k6Cn7E4Wl03cEI5v9K49l95';
-    
+
     $size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_CFB);
     $iv = mcrypt_create_iv($size, MCRYPT_DEV_URANDOM);
 
